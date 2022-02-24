@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+:root {
+    /* Primary */
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+
+    /* Neutral */
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--dark-grayish-blue);
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+#card {
+    background-color: var(--grayish-blue);
+    border-radius: 10px;
+    margin: auto;
+    padding: 35px 25px 15px 25px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 350px;
+}
+
+#advice-id {
+    color: var(--neon-green);
+    font-size: 11px;
+    letter-spacing: 4px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#text {
+    color: var(--light-cyan);
+    font-size: 28px;
+    font-weight: 800;
+    margin: 20px 0;
+    text-align: center;
+}
+
+#divider {
+    background-image: url('./images/pattern-divider-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 16px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+#dice {
+    align-items: center;
+    box-shadow: 0 0 0 transparent;
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    bottom: -45px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 18px;
+    position: relative;
+    transition: box-shadow .3s ease-in-out;
+    width: fit-content;
+}
+
+#dice.roll {
+    animation: roll-the-dice .6s ease-in-out 1 both;
+}
+
+#dice:hover {
+    box-shadow: 0 0 25px 5px var(--neon-green);
+}
+
+footer {
+    position: sticky;
+    top: 100vh;
+}
+
+footer .attribution {
+    color: var(--light-cyan);
+    font-size: 10px;
+    text-align: center;
+}
+
+footer .attribution a {
+    color: var(--light-cyan);
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+}
+
+footer .attribution a:hover,
+footer .attribution a:visited {
+    color: var(--neon-green);
+}
+
+@keyframes roll-the-dice {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@media screen and (min-width: 1440px) {
+    #card {
+        width: 550px;
+    }
+
+    #divider {
+        background-image: url('./images/pattern-divider-desktop.svg');
+    }
+}
